@@ -1,54 +1,51 @@
 <template>
-    <div>
-        <ul class="message">
-            <li class="address">
-                <i class="iconfont icon-dizhi"></i>
-                <div class="caption">地址</div>
-                中山职业技术学院知信楼
-            </li>
-            <li class="telphone">
-                <i class="iconfont icon-24gl-phoneLoudspeaker"></i>
-                <div class="caption">电话</div>
-                11111111111
-            </li>
-            <li class="Email">
-                <i class="iconfont icon-email1"></i>
-                <div class="caption">Email</div>
-                3456789@qq.com
-            </li>
-        </ul>
-        <PageBottom />
+    <div class="footer">
+        <div class="foot">
+            <div class="title">优贤工作室</div>
+            <div class="contact">联系方式图标</div>
+            <div class="record">备案号</div>
         </div>
-    
+    </div>
 </template>
-
-<script setup>
-        import { PageBottom } from '../Bottom';
+<script>
+export default {
+    
+}
 </script>
-
-<style lang="css" scoped>
-.message{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 30px;
-}
-.message li{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 0 0 25%;
-    padding-top: 10px;
-    background-color: white;
-}
-.iconfont{
-    font-size: 24px;
-}
-.message li .caption{
-    padding: 5px;
-    margin-bottom: 10px;
-    border-bottom: solid 4px rgb(9, 178, 119);
-}
-
-
+<style scoped>
+    .footer{
+        width: 100vw;
+        height: 500px;
+        background-color: #0A142F;
+    }
+    .foot{
+        width: 1440px;
+        height: 500px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .foot>.title{
+        font-size: 40px;
+        font-family: 'BIAOTIHEI';
+        color: white;
+    }
+    .contact{
+        width: 600px;
+        border: 1px solid white;
+        height: 200px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .record{
+        width: 600px;
+        height: 50px;
+        border: 1px solid #7f7f7f;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 </style>

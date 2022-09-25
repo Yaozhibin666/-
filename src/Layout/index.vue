@@ -1,9 +1,5 @@
 <template>
-    <div class="bgc">
-    <PageHearder />
-    <PageMain />
-    <PageFooter />
-    </div>
+    <Helloview></Helloview>
 </template>
 
 <script setup>
@@ -12,6 +8,7 @@ import { PageHearder } from './components/Hearder';
 import { PageMain } from './components/Main';
 import { PageMenu } from './components/Menu';
 import { PageTab } from './components/Tab';
+import Helloview from '../views/HomeView.vue'
 
 
 </script>
