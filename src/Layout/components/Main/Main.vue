@@ -1,169 +1,226 @@
 <template>
-    <div class="main w">
-        <div class="announcement">
-            <div class="caption">
-                <i class="iconfont icon-tongzhi"></i>
-                <strong>通知公告</strong>
+    <div class="bodyer">
+        <div class="title">工作室业务范围</div>
+        <div class="profile">这里放点简介这里放点简介这里放点简介这里放点简介这里放点简介这里放点简介这里放点简介这里放点简介这里放点简介这里放点简介这里放点简介这里放点简介</div>
+        <div class="bigbox">
+            <span v-for="item in list">
+                <div>
+                    <img :src="item.url" alt="">
+                </div>
+                <p>{{item.name}}</p>
+                <a>{{item.text}}</a>
+            </span>
+        </div>
+        <div class="title">成员组成</div>
+        <div class="profile">全是精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英精英</div>
+        <div class="headbox">
+            <div class="teachers">
+                <div class="head" v-for="item in Theads"><img :src="item.url" alt=""></div>
             </div>
-            <div class="text">
+            <div class="students">
+                <div class="head" v-for="item in Sheads"><img :src="item.url" alt=""></div>
             </div>
         </div>
-        <div class="aboutUs">
-            <div class="caption">关于我们</div>
-            <div class="text">
-                <div class="cn">
-                    <p>优贤⼯作室是⼀个具有优秀师资并且实操能⼒强⼤的团队。</p>
-                    <p>为了促进学习交流，实际运⽤⾃⼰所学的知识，提⾼⾃⼰的⽔平，锻炼⾃⼰与他⼈协作的能⼒，组建软件开发⼩团队来锻炼⾃⼰。</p>
-                    <p>我们团队的⽬标是编写⼀个完整的可投⼊实际⽤的⽹站的开发，使我们能够在开发过程中能够有所收获，获得锻炼。</p>
-                    <p>团队中的每⼀位成员都有着⾼昂的学习热情，能够找好⾃⼰的位置，为整个团队贡献⼒量</p>
-                </div>
-                <div class="en">
-                    <p> Want to study with the best?We can't wait to help you get started! </p>
-                    <input type="button" value="了解更多">
-                </div>
-            </div>
-        </div>
-        <div class="Faculty">
-            <div class="caption">
-                <div class="cn"><i class="iconfont icon-shizi"></i>师资⼒量</div>
-                <div class="en">The people behind Ration studio</div>
-            </div>
+        <div class="envirW">
+                <img src="../../../../public/img/环境宣传照1.jpg" alt="">
             <div class="content">
-                <ul>
-                    <li>
-                        <div class="avatar"></div>
-                        <div class="text">简单介绍：</div>
-                    </li>
-                    <li>
-                        <div class="avatar"></div>
-                        <div class="text">简单介绍：</div>
-                    </li>
-                    <li>
-                        <div class="avatar"></div>
-                        <div class="text">简单介绍：</div>
-                    </li>
-                </ul>
+                <p>良好的氛围</p>
+                <a>真的非常好真的非常好真的非常好真的非常好真的非常好真的非常好真的非常好真的非常好真的非常好真的非常好真的非常好真的非常好真的非常好真的非常好真的非常好真的非常好真的非常好真的非常好真的非常好</a>
+                <div>
+                    <div class="ltbox" v-for="item in fenwei">
+                        <h3>{{item.name}}</h3>
+                        <div>
+                            <img :src="item.url" alt="">
+                            <a>{{item.text}}</a>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
-        <div class="contactUs">
-            <div class="caption">
-                ···联系我们···
-            </div>
-            <i class="iconfont icon-xiayi"></i>
-        </div>
-    </div> 
+    </div>
 </template>
-
-<script setup>
-
+<script>
+export default {
+    data(){
+        return{
+            list:[        
+                { name: "JAVA", url: "../../../../public/img/java.png" ,text:"这里可以填写简介这里可以填写简介这里可以填写简介这里可以填写简介"},
+                { name: "Web", url: "../../../../public/img/Web.png" ,text:"这里可以填写简介这里可以填写简介这里可以填写简介这里可以填写简介"},
+                { name: "数据库", url: "../../../../public/img/shujuku.png" ,text:"这里可以填写简介这里可以填写简介这里可以填写简介这里可以填写简介"},
+                { name: "小程序", url: "../../../../public/img/xiaochengxu.png" ,text:"这里可以填写简介这里可以填写简介这里可以填写简介这里可以填写简介"},
+            ],
+            Sheads:[
+                {status:"student",url:"../../../../public/logo.ico"},
+                {status:"student",url:"../../../../public/logo.ico"},
+                {status:"student",url:"../../../../public/logo.ico"},
+                {status:"student",url:"../../../../public/logo.ico"},
+                {status:"student",url:"../../../../public/logo.ico"},
+            ],
+            Theads:[
+                {status:"teacher",url:"../../../../public/logo.ico"},
+                {status:"teacher",url:"../../../../public/logo.ico"},
+                {status:"teacher",url:"../../../../public/logo.ico"},
+            ],
+            fenwei:[
+                { name: "JAVA", url: "../../../../public/img/java.png" ,text:"这里可以填写简介这里可以填写简介这里可以填写简介这里可以填写简介"},
+                { name: "Web", url: "../../../../public/img/Web.png" ,text:"这里可以填写简介这里可以填写简介这里可以填写简介这里可以填写简介"},
+                { name: "数据库", url: "../../../../public/img/shujuku.png" ,text:"这里可以填写简介这里可以填写简介这里可以填写简介这里可以填写简介"},
+                { name: "小程序", url: "../../../../public/img/xiaochengxu.png" ,text:"这里可以填写简介这里可以填写简介这里可以填写简介这里可以填写简介"},
+            ]
+        }
+    }
+}
 </script>
+<style scoped>
+    .bodyer{
+        width: 100vw;
+        height: 2400px;
+        background-color: #F9F9FB;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .bodyer .title{
+        font-size: 45px;
+        padding: 40px 0 20px 0;
+        letter-spacing: .2em;
+        user-select: none;
+        font-family: 'BiaoTiHei';
+    }
+    .profile{
+        width: 1000px;
+        font-size: 20px;
+        color: #7f7f7f;
+        font-family: 'FeiYunTi';
+    }
+    .bigbox{
+        width: 850px;
+        height: 650px;
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 50px;
+    }
+    .bigbox span{
+        width: 405px;
+        height: 300px;
+        display: inline-block;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+        background-color: white;
+        border-radius: 25px;
+        transition: all .5S;
+        box-shadow:  20px 20px 60px #f7f6f6,
+             -20px -20px 60px #ffffff;
+    }
+    .bigbox span:hover{
+        box-shadow:  41px 41px 82px #d9d9d9,
+             -41px -41px 82px #ffffff;
+    }
+    .bigbox span img{
+        width: 60px;
+    }
+    .bigbox span div{
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+        background-color: #F0EEFF;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+    .bigbox span p{
+        font-size: 30px;
+        color: #6854FC;
+        margin: 10px 0 10px 0;
+        font-family: 'FeiYunTi';
+        letter-spacing: .3EM;
+    }
+    .bigbox span a{
+        display: inline-block;
+        width: 240px;
+        font-size: 15px;
+        color: #7f7f7f;
+    }
+    .headbox{
+        width: 1000px;
+        height: 300px;
+        margin-top: 40px;
+    }
+    .teachers,.students{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .head{
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        background-color: #6854FC;
+        margin: 20px;
+        transition: all .5s ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border: 3px solid  #ffffff;
+    }
+    .head:hover{
+        border-radius: 50%;
+        box-shadow:  12px 12px 24px #bebebe,
+             -12px -12px 24px #ffffff;
+    }
+    .head img{
+        width: 130px;
+        height: 130px;
+    }
+    .envirW{
+        width: 1200px;
+        height: 720px;
+        margin: 50PX auto 0 auto;
+        overflow: hidden;
+        display: flex;
+    }
+    .envirW>img{
+        width: 500px;
+        height: 700px;
+        border-radius: 20px;
+        margin: 0 50px 0 100px;
+    }
+    .envirW .content{
+        width: 500px;
+        margin-left: 0 100px 0 50px;
+        height: 100%;
+    }
+    .envirW .content p{
+        font-size: 35px;
+        font-family: 'biaotihei';
+    }
+    .envirW .content>div {
+       margin-top: 20px;
+    }
+    .envirW .content h3{
+        font-family: 'feiyunti';
+        letter-spacing: .4em;
+    }
+    .ltbox div img{
+        width: 48px;
+        height: 48px;
+    }
 
-<style lang="css" scoped>
-.announcement{
-    display: flex;
-    justify-content: center;
-    width: 85%;
-    height: 90px;
-    margin: 0 auto;
-    margin-top: 95px;
-   background-color: rgb(255, 255, 255);
-}
-.announcement .caption{
-    margin-top: 5px;
-    font-size: 18px;
-    letter-spacing: 5px;
-}
-.aboutUs{
-    display: flex;
-    flex-direction: column;
-    width: 85%;
-    margin: 0 auto;
-    margin-top: 60px;
-}
-.aboutUs .caption{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-.aboutUs .text{
-    display: flex;
-    justify-content: space-around;
-    background-color: rgb(255, 255, 255);
-}
-.aboutUs .text .cn{
-    width: 50%;
-    padding: 30px;
-}
-.aboutUs .text .cn p{
-    margin-bottom: 20px;
-}
-.aboutUs .text .en{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.aboutUs .text .en p{
-    width: 90%;
-    margin-left: 20px;
-    padding-top: 20px;
-    padding-bottom: 25px;
-    border-bottom: solid 4px black;
-}
-.aboutUs .text .en input{
-    width: 110px;
-    height: 38px;
-    /* border: solid 1px red; */
-    align-self: flex-end;
-    margin-right: 30px;
-    margin-bottom: 20px;
-}
-.Faculty {
-    width: 85%;
-    margin: 0 auto;
-    margin-top: 60px;
-}
-.Faculty .caption{
-    font-size: 20px;
-}
-.icon-shizi{
-    font-size: 24px;
-}
-.Faculty .caption .cn{
-    letter-spacing: 2px;
-}
-.Faculty .caption .en{
-    padding-left: 20px;
-    font-size: 14px;
-}
-.Faculty .content ul{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 30px;
-}
-.Faculty .content ul li .avatar{
-    width: 145px;
-    height: 145px;
-    border-radius: 50%;
-    border: solid 1px black;
-    background-color: white;
-}
-.Faculty .content ul li .text{
-    padding-left: 20px;
-}
-.contactUs{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 40px;
-    font-size: 24px;
-    width: 50%;
-}
-.icon-xiayi{
-    font-size: 20px;
-}
+    .ltbox div{
+        height: 85px;
+        display: flex;
+        margin:10px 0px
+        
+    }
+    .ltbox div a{
+        margin-left: 20px;
+    }
 </style>
