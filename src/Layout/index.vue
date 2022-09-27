@@ -1,5 +1,5 @@
 <template>
-    <Helloview></Helloview>
+    <NewsPage></NewsPage>
 </template>
 
 <script setup>
@@ -9,6 +9,7 @@ import { PageMain } from './components/Main';
 import { PageMenu } from './components/Menu';
 import { PageTab } from './components/Tab';
 import Helloview from '../views/HomeView.vue'
+import NewsPage from '../views/NewsPage.vue';
 
 
 </script>

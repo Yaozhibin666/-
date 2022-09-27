@@ -1,5 +1,6 @@
 <template>
   <Hearder></Hearder>
+  <Banner></Banner>
   <div class="fg"></div>
   <Bodyer></Bodyer>
   <Footer></Footer>
@@ -9,8 +10,9 @@
 import Hearder from '../Layout/components/Hearder/Hearder.vue';
 import Bodyer from '../Layout/components/Main/Main.vue'
 import Footer from '../Layout/components/Footer/Footer.vue'
+import Banner from '../Layout/components/Top/Banner.vue'
 export default {
-  components: { Hearder, Bodyer, Footer }
+  components: { Hearder, Bodyer, Footer ,Banner}
 }
 </script>
 <style scoped>
