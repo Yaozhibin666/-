@@ -3,8 +3,13 @@
         <div class="Name">YouXian优贤工作室</div>
         <div class="CONTROLS">
             <button class="call_btn">Connect with us</button>
-            <div>
-                <div class="muchBtn"></div>
+            <div @mouseover="hoverMenuIn" @mouseleave="hoverMenuOut">
+                <div class="muchBtn" >
+                    <transition name="Fade">
+                        <Menu class="menu" :style="MenuStyle" v-if="show"></Menu>
+                    </transition>
+                    
+                </div>
             </div>
         </div>
     </div>
@@ -25,10 +30,35 @@
     </div>
 </template>
 <script>
+    import Menu from '../Menu/Menu.vue'
 export default {
+    components:{ Menu },
     data() {
         return {
-            hotnews: "恭喜优贤工作室荣获一等奖！"
+            hotnews: "恭喜优贤工作室荣获一等奖！",
+            moveOut:0,
+            show:false,
+            MenuStyle:{
+                display:"NONE"
+            }
+        }
+    },
+    methods:{
+        hoverMenuIn () {
+            console.log("移入移入")
+            this.show=true
+            this.$data.moveOut=1
+            this.$data.MenuStyle.display="BLOCK"
+        },
+        hoverMenuOut () {
+            console.log("移出移出")
+            this.$data.moveOut=0
+            setTimeout(()=>{
+                if(this.$data.moveOut!=1){
+                    this.show=false
+                    this.$data.MenuStyle.display="none"
+                }
+            },15000)
         }
     }
 }
@@ -81,7 +111,19 @@ export default {
     border-bottom: 5px solid black;
     position: relative;
 }
+.Fade-enter,
+.Fade-leave-to {
+	opacity: 0;
+}
+.Fade-enter-to,
+.Fade-leave {
+	opacity: 1;
+}
 
+.Fade-enter-active,
+.Fade-leave-active {
+	transition: all .5s;
+}	
 .header .CONTROLS>div {
     width: 35px;
     height: 50px;
@@ -89,15 +131,16 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
 .header .CONTROLS>div:hover .muchBtn::after {
     left: 0px;
+    border-color: #6854FC;
 }
 
 .header .CONTROLS>div:hover .muchBtn::before {
     left: 8px;
+    border-color: #6854FC;
 }
 
 .muchBtn::after {

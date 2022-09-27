@@ -75,7 +75,7 @@ export default {
 <style scoped>
     .bodyer{
         width: 100vw;
-        height: 2400px;
+        height: 2200px;
         background-color: #F9F9FB;
         display: flex;
         flex-direction: column;
@@ -181,11 +181,13 @@ export default {
         height: 130px;
     }
     .envirW{
-        width: 1200px;
+        width: 100vw;
         height: 720px;
         margin: 50PX auto 0 auto;
         overflow: hidden;
         display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .envirW>img{
         width: 500px;
