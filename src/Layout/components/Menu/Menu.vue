@@ -2,10 +2,18 @@
     <div class="menu">
         <div class="title">Menu</div>
         <div class="icon">
-            <img src="../../../../public/img/home_light.png" alt="">    
-            <img src="../../../../public/img/24gl-newspapers2.png" alt="">
-            <img src="../../../../public/img/xiangmuchengguo.png" alt="">
-            <img src="../../../../public/img/guanyu.png" alt="">
+            <router-link to="/">
+                <img src="../../../../public/img/home_light.png" alt="">  
+            </router-link>  
+            <router-link to="/new">
+                <img src="../../../../public/img/24gl-newspapers2.png" alt="">
+            </router-link>
+            <router-link to="/">
+                <img src="../../../../public/img/xiangmuchengguo.png" alt="">
+            </router-link>
+            <router-link to="/">
+                <img src="../../../../public/img/guanyu.png" alt="">
+            </router-link>
         </div>
     </div>
 </template>

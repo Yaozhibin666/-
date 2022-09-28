@@ -1,5 +1,9 @@
 <template>
-    <NewsPage></NewsPage>
+    <Hearder></Hearder>
+    <router-view>
+        
+    </router-view>
+    <!-- <HomeView></HomeView> -->
 </template>
 
 <script setup>
@@ -8,8 +12,9 @@ import { PageHearder } from './components/Hearder';
 import { PageMain } from './components/Main';
 import { PageMenu } from './components/Menu';
 import { PageTab } from './components/Tab';
-import Helloview from '../views/HomeView.vue'
 import NewsPage from '../views/NewsPage.vue';
+import HomeView from '../views/HomeView.vue';
+import Hearder from './components/Hearder/Hearder.vue';
 
 
 </script>

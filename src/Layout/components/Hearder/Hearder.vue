@@ -43,7 +43,7 @@ export default {
                     this.show=false
                     this.$data.MenuStyle.display="none"
                 }
-            },15000)
+            },1000)
         }
     }
 }

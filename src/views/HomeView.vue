@@ -1,5 +1,4 @@
 <template>
-  <Hearder></Hearder>
   <Banner></Banner>
   <div class="fg"></div>
   <Bodyer></Bodyer>
