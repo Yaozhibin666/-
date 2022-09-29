@@ -3,32 +3,47 @@
         <div class="Name">YouXian优贤工作室</div>
         <div class="CONTROLS">
             <button class="call_btn">Connect with us</button>
-            <div>
-                <div class="muchBtn"></div>
+            <div @mouseover="hoverMenuIn" @mouseleave="hoverMenuOut">
+                <div class="muchBtn" >
+                    <transition name="Fade">
+                        <Menu class="menu" :style="MenuStyle" v-if="show"></Menu>
+                    </transition>
+                    
+                </div>
             </div>
         </div>
-    </div>
-    <div class="banner-B">
-        <div class="banner">
-        <div class="Content">
-            <div class="buoy">
-                <img src="../../../../public/img/logo.png" alt="">
-                <a>#1 {{hotnews}}</a>
-            </div>
-            <div class="title" >YouXian Welcome Your Join.</div>
-            <div class="copyT">
-                逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼
-            </div>
-            <button style="margin:20px 0 0 80px;" class="call_btn">Connect with us</button>
-        </div>
-    </div>
     </div>
 </template>
 <script>
+    import Menu from '../Menu/Menu.vue'
 export default {
+    components:{ Menu },
     data() {
         return {
-            hotnews: "恭喜优贤工作室荣获一等奖！"
+            hotnews: "恭喜优贤工作室荣获一等奖！",
+            moveOut:0,
+            show:false,
+            MenuStyle:{
+                display:"NONE"
+            }
+        }
+    },
+    methods:{
+        hoverMenuIn () {
+            console.log("移入移入")
+            this.show=true
+            this.$data.moveOut=1
+            this.$data.MenuStyle.display="BLOCK"
+        },
+        hoverMenuOut () {
+            console.log("移出移出")
+            this.$data.moveOut=0
+            setTimeout(()=>{
+                if(this.$data.moveOut!=1){
+                    this.show=false
+                    this.$data.MenuStyle.display="none"
+                }
+            },1000)
         }
     }
 }
@@ -81,7 +96,19 @@ export default {
     border-bottom: 5px solid black;
     position: relative;
 }
+.Fade-enter,
+.Fade-leave-to {
+	opacity: 0;
+}
+.Fade-enter-to,
+.Fade-leave {
+	opacity: 1;
+}
 
+.Fade-enter-active,
+.Fade-leave-active {
+	transition: all .5s;
+}	
 .header .CONTROLS>div {
     width: 35px;
     height: 50px;
@@ -89,15 +116,16 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
 .header .CONTROLS>div:hover .muchBtn::after {
     left: 0px;
+    border-color: #6854FC;
 }
 
 .header .CONTROLS>div:hover .muchBtn::before {
     left: 8px;
+    border-color: #6854FC;
 }
 
 .muchBtn::after {
@@ -118,76 +146,5 @@ export default {
     top: 15px;
     left: 0px;
     transition: all .5S;
-}
-.banner-B{
-    width: 100vw;
-    height: 720px;
-    background-color: #F9F9FB;
-}
-
-.banner {
-    width: 1440px;
-    height: 720px;
-    background: url(../../../../public/img/banner.png);
-    background-size: 1440px 720px;
-    background-position: -40px 70px;
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-}
-
-.banner .Content {
-    width: 700px;
-    height: 80%;
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-
-}
-
-.buoy {
-    width: 300px;
-    height: 40px;
-    border-radius: 20px;
-    background-color: #EEEEF0;
-    display: flex;
-    align-items: center;
-    margin-top: 110px;
-    margin-left: 80px;
-}
-
-.buoy img {
-    width: 30px;
-    height: 30px;
-    border-radius: 30px;
-    margin-left: 10px;
-}
-
-.buoy a {
-    font-size: 15px;
-    margin-left: 20px;
-    font-weight: 700;
-    color: black;
-    user-select: none;
-}
-
-.banner .Content .title {
-    width: 220px;
-    color: black;
-    font-size: 50px;
-    font-weight: 500;
-    line-height: 60px;
-    margin-left: 80px;
-    margin-top: 20px;
-    font-family: 'BiaoTiHei';
-}
-
-.copyT {
-    margin-top: 20px;
-    width: 600px;
-    height: 60px;
-    overflow: hidden;
-    margin-left: 80px;
-    color: #7f7f7f;
 }
 </style>
