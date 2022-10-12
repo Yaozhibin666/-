@@ -8,7 +8,7 @@
                 </div>
                 <div class="title" >YouXian Welcome Your Join.</div>
                 <div class="copyT">
-                    逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼优贤牛逼
+                    优贤工作室,成立于2021年4月，有一群志同道合的小伙伴。作为一个提升专业知识的平台，其主攻方向为基础算法,Java,小程序开发以及前端开发。
                 </div>
                 <button style="margin:20px 0 0 80px;" class="call_btn">Connect with us</button>
             </div>
