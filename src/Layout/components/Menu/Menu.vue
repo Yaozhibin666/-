@@ -8,10 +8,10 @@
             <router-link to="/new">
                 <img src="../../../../public/img/24gl-newspapers2.png" alt="">
             </router-link>
-            <router-link to="/">
+            <router-link to="/act">
                 <img src="../../../../public/img/xiangmuchengguo.png" alt="">
             </router-link>
-            <router-link to="/">
+            <router-link to="/connect">
                 <img src="../../../../public/img/guanyu.png" alt="">
             </router-link>
         </div>
