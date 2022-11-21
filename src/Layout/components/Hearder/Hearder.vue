@@ -30,13 +30,13 @@ export default {
     },
     methods:{
         hoverMenuIn () {
-            console.log("移入移入")
+            // console.log("移入移入")
             this.show=true
             this.$data.moveOut=1
             this.$data.MenuStyle.display="BLOCK"
         },
         hoverMenuOut () {
-            console.log("移出移出")
+            // console.log("移出移出")
             this.$data.moveOut=0
             setTimeout(()=>{
                 if(this.$data.moveOut!=1){
@@ -50,6 +50,7 @@ export default {
 </script>
 <style scoped>
 .header {
+    min-width: 1619px;
     width: 100vw;
     height: 100px;
     background-color: #FFFFFF;

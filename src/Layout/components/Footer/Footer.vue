@@ -9,22 +9,19 @@
                     </div>
                 </div>
             </div>
-            <div class="record">备案号</div>
+            <div class="record">备案号    {{beian}}</div>
         </div>
     </div>
 </template>
-<script>
-export default {
-    data(){
-        return{
-            imgurl:[
-                    {url:"../../../../public/img/QQ.png"},
-                    {url:"../../../../public/img/weixin.png"},
-                    {url:"../../../../public/img/github-fill.png"}
-                ]
-        }
-    }
-}
+<script lang="ts" setup>
+import { onMounted } from 'vue';
+import {imgurl,getBB,beian} from '../../../untils/footer/footer'
+const getIndex =1
+
+onMounted(()=>{
+    getBB()
+})
+
 </script>
 <style scoped>
     .footer{
